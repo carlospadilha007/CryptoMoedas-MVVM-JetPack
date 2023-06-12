@@ -27,7 +27,7 @@ class GetCoinsListUseCases @Inject constructor(
         } catch(e: HttpException) {
             emit(Resource.Error<List<Coin>>(e.localizedMessage ?: "Um erro inesperado aconteceu"))
         } catch(e: IOException) {
-            emit(Resource.Error<List<Coin>>("Não foi possivel conectar ao servidor, verifique a sua conexão de internet!"))
+            emit(Resource.Error<List<Coin>>("Não foi possivel conectar-se ao servidor. Verifique a sua conexão de internet!!"))
         }
     }
 }

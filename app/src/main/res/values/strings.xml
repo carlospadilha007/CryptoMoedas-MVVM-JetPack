@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">Crypto Moedas</string>
+    <string name="membros_do_time">Membros do Time</string>
+    <string name="is_active">Ativa</string>
+    <string name="is_inactive">Inativa</string>
 </resources>
