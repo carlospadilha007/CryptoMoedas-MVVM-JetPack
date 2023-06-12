@@ -3,7 +3,7 @@ package com.plcoding.cryptocurrencyappyt.di
 import com.plcoding.cryptocurrencyappyt.common.Constants
 import com.plcoding.cryptocurrencyappyt.data.remote.CoinPaprikaApi
 import com.plcoding.cryptocurrencyappyt.data.repository.CoinRepositoryImpl
-import com.plcoding.cryptocurrencyappyt.domain.repository.CoinRepository
+import com.plcoding.cryptocurrencyappyt.presentation.coin_detail.domain.repository.CoinRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

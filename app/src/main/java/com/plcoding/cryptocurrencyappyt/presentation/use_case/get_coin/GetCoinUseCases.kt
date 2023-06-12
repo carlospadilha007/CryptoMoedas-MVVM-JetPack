@@ -3,10 +3,10 @@ package com.plcoding.cryptocurrencyappyt.presentation.use_case.get_coin
 import com.plcoding.cryptocurrencyappyt.common.Resource
 import com.plcoding.cryptocurrencyappyt.data.remote.dto.toCoin
 import com.plcoding.cryptocurrencyappyt.data.repository.CoinRepositoryImpl
-import com.plcoding.cryptocurrencyappyt.domain.model.Coin
-import com.plcoding.cryptocurrencyappyt.domain.model.CoinDetail
-import com.plcoding.cryptocurrencyappyt.domain.model.toCoinDetail
-import com.plcoding.cryptocurrencyappyt.domain.repository.CoinRepository
+import com.plcoding.cryptocurrencyappyt.presentation.coin_detail.domain.model.Coin
+import com.plcoding.cryptocurrencyappyt.presentation.coin_detail.domain.model.CoinDetail
+import com.plcoding.cryptocurrencyappyt.presentation.coin_detail.domain.model.toCoinDetail
+import com.plcoding.cryptocurrencyappyt.presentation.coin_detail.domain.repository.CoinRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import retrofit2.HttpException
@@ -27,9 +27,9 @@ class GetCoinUseCases @Inject constructor(
             val coin = repository.getCoinById(coinId).toCoinDetail()
             emit(Resource.Success<CoinDetail>(coin))
         } catch(e: HttpException) {
-            emit(Resource.Error<CoinDetail>(e.localizedMessage ?: "An unexpected error occured"))
+            emit(Resource.Error<CoinDetail>(e.localizedMessage ?: "Um erro inesperado ocorreu!"))
         } catch(e: IOException) {
-            emit(Resource.Error<CoinDetail>("Couldn't reach server. Check your internet connection."))
+            emit(Resource.Error<CoinDetail>("Não foi possivel conectar-se ao servidor. Verifique sua conexão de internet!"))
         }
     }
 }

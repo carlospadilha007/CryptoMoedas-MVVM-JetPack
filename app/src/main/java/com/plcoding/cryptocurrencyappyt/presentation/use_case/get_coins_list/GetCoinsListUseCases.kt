@@ -3,8 +3,8 @@ package com.plcoding.cryptocurrencyappyt.presentation.use_case.get_coins_list
 import com.plcoding.cryptocurrencyappyt.common.Resource
 import com.plcoding.cryptocurrencyappyt.data.remote.dto.toCoin
 import com.plcoding.cryptocurrencyappyt.data.repository.CoinRepositoryImpl
-import com.plcoding.cryptocurrencyappyt.domain.model.Coin
-import com.plcoding.cryptocurrencyappyt.domain.repository.CoinRepository
+import com.plcoding.cryptocurrencyappyt.presentation.coin_detail.domain.model.Coin
+import com.plcoding.cryptocurrencyappyt.presentation.coin_detail.domain.repository.CoinRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import retrofit2.HttpException

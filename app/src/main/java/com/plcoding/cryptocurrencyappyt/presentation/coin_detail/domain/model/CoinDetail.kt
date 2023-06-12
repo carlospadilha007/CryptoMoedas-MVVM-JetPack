@@ -1,4 +1,4 @@
-package com.plcoding.cryptocurrencyappyt.domain.model
+package com.plcoding.cryptocurrencyappyt.presentation.coin_detail.domain.model
 
 import com.plcoding.cryptocurrencyappyt.data.remote.dto.CoinDetailDto
 import com.plcoding.cryptocurrencyappyt.data.remote.dto.TeamMember
@@ -14,7 +14,7 @@ data class CoinDetail(
     val team: List<TeamMember>
 )
 
-fun CoinDetailDto.toCoinDetail(): CoinDetail{
+fun CoinDetailDto.toCoinDetail(): CoinDetail {
     return CoinDetail(
         coinId = id,
         name = name,

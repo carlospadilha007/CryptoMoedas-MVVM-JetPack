@@ -1,6 +1,6 @@
 package com.plcoding.cryptocurrencyappyt.data.remote.dto
 
-import com.plcoding.cryptocurrencyappyt.domain.model.Coin
+import com.plcoding.cryptocurrencyappyt.presentation.coin_detail.domain.model.Coin
 
 data class CoinDto(
     val id: String,

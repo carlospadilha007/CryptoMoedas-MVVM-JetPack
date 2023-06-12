@@ -1,4 +1,4 @@
-package com.plcoding.cryptocurrencyappyt.domain.model
+package com.plcoding.cryptocurrencyappyt.presentation.coin_detail.domain.model
 
 data class Coin(
     val id: String,

@@ -1,5 +1,6 @@
 package com.plcoding.cryptocurrencyappyt.presentation.coin_detail
 
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.PaddingValues
@@ -11,6 +12,9 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.Button
+import androidx.compose.material.ButtonDefaults
 import androidx.compose.material.CircularProgressIndicator
 import androidx.compose.material.Divider
 import androidx.compose.material.MaterialTheme
@@ -24,12 +28,15 @@ import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.navigation.NavController
 import com.google.accompanist.flowlayout.FlowRow
+import com.plcoding.cryptocurrencyappyt.presentation.Screen
 import com.plcoding.cryptocurrencyappyt.presentation.coin_detail.components.CoinTag
 import com.plcoding.cryptocurrencyappyt.presentation.coin_detail.components.TeamListItem
 
 @Composable
 fun CoinDetailScreen(
+    navController: NavController,
     viewModel: CoinDetailViewModel = hiltViewModel()
 ) {
     val state = viewModel.state.value
@@ -50,8 +57,8 @@ fun CoinDetailScreen(
                             modifier = Modifier.weight(8f)
                         )
                         Text(
-                            text = if(coin.is_active) "active" else "inactive",
-                            color = if(coin.is_active) Color.Green else Color.Red,
+                            text = if (coin.is_active) "Ativa" else "Inativa",
+                            color = if (coin.is_active) Color.Green else Color.Red,
                             fontStyle = FontStyle.Italic,
                             textAlign = TextAlign.End,
                             modifier = Modifier
@@ -64,6 +71,25 @@ fun CoinDetailScreen(
                         text = coin.description,
                         style = MaterialTheme.typography.body2
                     )
+                    //Cotação
+                    Spacer(modifier = Modifier.height(15.dp))
+                    Button(
+                        border = BorderStroke(1.dp, Color.White),
+                        onClick = { navController.navigate(Screen.CoinPriceScreen.route) },
+                        colors = ButtonDefaults.buttonColors(backgroundColor = Color(60,179,113)),
+                        shape = RoundedCornerShape(100.dp),
+                        elevation =  ButtonDefaults.elevation(
+                            defaultElevation = 10.dp,
+                            pressedElevation = 15.dp,
+                            disabledElevation = 0.dp
+                        )
+                    ) {
+                        Text(
+                            text = "Cotações do dia",
+                            style = MaterialTheme.typography.h2
+                        )
+                    }
+
                     Spacer(modifier = Modifier.height(15.dp))
                     Text(
                         text = "Tags",
@@ -98,7 +124,7 @@ fun CoinDetailScreen(
                 }
             }
         }
-        if(state.error.isNotBlank()) {
+        if (state.error.isNotBlank()) {
             Text(
                 text = state.error,
                 color = MaterialTheme.colors.error,
@@ -109,7 +135,7 @@ fun CoinDetailScreen(
                     .align(Alignment.Center)
             )
         }
-        if(state.isLoading) {
+        if (state.isLoading) {
             CircularProgressIndicator(modifier = Modifier.align(Alignment.Center))
         }
     }

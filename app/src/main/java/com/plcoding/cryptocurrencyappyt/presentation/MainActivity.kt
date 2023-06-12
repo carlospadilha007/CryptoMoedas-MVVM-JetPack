@@ -10,6 +10,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.plcoding.cryptocurrencyappyt.presentation.coin_detail.CoinDetailScreen
 import com.plcoding.cryptocurrencyappyt.presentation.coin_list.CoinListScreen
+import com.plcoding.cryptocurrencyappyt.presentation.coin_price.CoinPriceScreen
 import com.plcoding.cryptocurrencyappyt.presentation.ui.theme.CryptocurrencyAppYTTheme
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -33,7 +34,12 @@ class MainActivity : ComponentActivity() {
                         composable(
                             route = Screen.CoinDetailScreen.route + "/{coinId}"
                         ) {
-                            CoinDetailScreen()
+                            CoinDetailScreen(navController)
+                        }
+                        composable(
+                            route = Screen.CoinPriceScreen.route
+                        ) {
+                            CoinPriceScreen(navController)
                         }
                     }
                 }
