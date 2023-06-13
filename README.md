@@ -11,73 +11,75 @@
 
 <p align="center">  
 
-⭐ Aplicativo com listagem de cryptomoedas, a partir da API Coin Paprika. O aplicativo foi feito na arquitetura MVVM, Dagger-Hilt para injeção de dependências e JetPack Compose para a criação das interfaces
+⭐ Aplicativo com listagem de cryptomoedas, a partir da API Coin Paprika. Informações técnicas abaixo
+ 
+🎥 O aplicativo foi feito na arquitetura MVVM, Dagger-Hilt para injeção de dependências e JetPack Compose para a criação das interfaces.
 
 </p>
 
 </br>
 
 <p float="left" align="center">
-TELAS DO APLICATIVO. FOQUE EM MOSTRAR O QUE É BONITO E IMPORTANTE NO SEU APLICATIVO
+<img alt="screenshot" width="30%" src="screenshots/screen1.jpg">
+<img alt="screenshot" width="30%" src="screenshots/screen2.jpg">
+ 
 </p>
 
 ## Download
-BADGE DA PLAYSTORE https://play.google.com/intl/en_us/badges/
 
-Ou faça o download da <a href="apk/app-debug.apk?raw=true">APK diretamente</a>. Você pode ver <a href="https://www.google.com/search?q=como+instalar+um+apk+no+android">aqui</a> como instalar uma APK no seu aparelho android.
+Faça o download da <a href="apk/criptomoedas.apk?raw=true">APK diretamente</a>. Você pode ver <a href="https://www.google.com/search?q=como+instalar+um+apk+no+android">aqui</a> como instalar uma APK no seu aparelho android.
 
 ## Tecnologias usadas e bibliotecas de código aberto
 
-- Minimum SDK level COLOQUE AQUI A APK MINIMA
-- [Linguagem Kotlin](https://kotlinlang.org/) OU JAVA SE USAR JAVA
-
-- Jetpack - LISTE O MÁXIMO DE COMPONENTES DO JETPACK QUE VOCÊ USA
+- Minimum SDK level: 21
+- [Linguagem Kotlin](https://kotlinlang.org/)
+- Jetpack 
   - Lifecycle: Observe os ciclos de vida do Android e manipule os estados da interface do usuário após as alterações do ciclo de vida.
-  - ViewModel: Gerencia o detentor de dados relacionados à interface do usuário e o ciclo de vida. Permite que os dados sobrevivam a alterações de configuração, como rotações de tela.
-  - ViewBinding: Liga os componentes do XML no Kotlin através de uma classe que garante segurança de tipo e outras vantagens.
-  - Room: Biblioteca de abstração do banco de dados SQLite que garante segurança em tempo de compilação e facilidade de uso.
-  - Custom Views: View customizadas feitas do zero usando XML.
-  - [...]
+  - ViewModel: Gerencia o detentor de dados relacionados à interface do usuário e o ciclo de vida. 
+  - LazyColunm: Faz a listagem dinámica dos dado de entrada
+  - NavController: Usado para gerir as trasições de tela
 
-- Arquitetura - LISTE BREVEMENTE OS COMPONENTES DA SUA ARQUITETURA UTILIZADA
+- Arquitetura 
   - MVVM (View - ViewModel - Model)
-  - Comunicação da ViewModel com a View através de LiveData
   - Comunicação da ViewModel com a Model através de Kotlin Flow
   - Repositories para abstração da comunidação com a camada de dados.
   
-- Bibliotecas - LISTE TODAS AS BIBLIOTECAS USADAS NO PROJETO, COM LINK E DESCRIÇÃO BREVE DO QUE ELA FAZ
+- Bibliotecas 
   - [Retrofit2 & OkHttp3](https://github.com/square/retrofit): Para realizar requisições seguindo o padrão HTTP.
-  - [Glide](https://github.com/bumptech/glide): Para carregamento de imagens e cacheamento das mesmas.
-  - [Timber](https://github.com/JakeWharton/timber): Para registros de logs mais amigáveis que facilitam o debug.
-  - [...]
+  - [Dagger-Hilt](https://github.com/google/dagger): Para carregamento de imagens e cacheamento das mesmas.
+ 
 
 ## Arquitetura
-APRESENTE A ARQUITETURA UTILIZADA NO PROJETO
-**Nome do aplicativo** utiliza a arquitetura MVVM e o padrão de Repositories, que segue as [recomendações oficiais do Google](https://developer.android.com/topic/architecture).
+**CryptoMoedas** utiliza a arquitetura MVVM e o padrão de Repositories, que segue as [recomendações oficiais do Google](https://developer.android.com/topic/architecture).
 </br></br>
-ADICIONE UM FLUXOGRAMA DA ARQUITETURA UTILIZADA - https://excalidraw.com/
+<img alt="screenshot" width="100%" src="screenshots/arquitetura.png">
 <br>
 
 ## API de terceiros
-
-COLOQUE O NOME, LINK E DESCRIÇÃO DAS APIS UTILIZADAS NO PROJETO
+[Coin Paprika Api](https://api.coinpaprika.com/) Retorna os dados de varias cryptomoedas do mercado
 
 ## Features
 
 ### Feature 1
-<img src="screenshots/feature-1.gif" width="25%"/>
+<img src="screenshots/featured1.gif" width="50%"/>
 
-Texto de exemplo
-
-### Feature 2
-<img src="screenshots/feature-2.gif" width="25%"/>
-
-Texto de Exemplo.
+Mostra do funcionamento de listagem e descrição do projeto
 
 # Licença
 
-COLOQUE A LICENÇA - https://opensource.org/licenses
 
 ```xml
+Copyright [2023] [Carlos Padilha]
 
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
 ```
